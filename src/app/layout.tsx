@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,54 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} bg-[#1C1C14] min-w-full text-white`}>
+      <h1 className="text-[#E8FE41]">Transmídia</h1>
+      {children}
+      <footer className="flex flex-col bg-[#CFB2F5]">
+        <div className="w-full">
+          <p className="text-[#E8FE41] text-center">Transmídia</p>
+          <div className="flex justify-center">
+            <div>Ico</div>
+            <div>Icon</div>
+          </div>
+        </div>
+        <div className="flex items-center px-4 justify-between">
+          <div className="flex flex-col">
+            <div>
+            <p className="font-bold">Institucional</p>
+            <Separator className="bg-black max-w-32" />
+            </div>
+            <div className="text-black mt-2 text-sm">
+              <p>Quem somos</p>
+              <p>Apoie Transmídia</p>
+              <p>Termos de uso</p>
+              <p>Política de privacidade</p>
+            </div>
+          </div>
+          <div className="flex justify-end flex-col">
+            <div>
+            <p className="text-right font-bold">Jornalismo</p>
+            <Separator className="bg-black min-w-32" />
+            </div>
+            <div className="text-black text-end mt-2 text-sm">
+              <p>Acué</p>
+              <p>Saúde</p>
+              <p>Cultura</p>
+              <p>Política</p>
+            </div>
+          </div>
+        </div>
+        <nav className="flex bg-[#E8FE41] max-w-full justify-between rounded-t-lg text-black">
+        <Button variant='ghost'>Apoie</Button>
+        <Separator orientation="vertical" className="bg-black"/>
+          <Button variant='ghost'>Share</Button>
+          <Separator orientation="vertical" className="bg-black"/>
+          <Button variant='ghost'>Search</Button>
+          <Separator orientation="vertical" className="bg-black"/>
+          <Button variant='ghost'>Menu</Button>
+        </nav>
+      </footer>
+        </body>
     </html>
   );
 }
