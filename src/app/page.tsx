@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import profile from '../../public/images/image.jpg';
 import Image from 'next/image';
+import { Card } from '@/components/interface/card';
 
 const newsItems = [
   {
@@ -206,29 +207,18 @@ export default function Component() {
 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4'>
         {cardItems.map((card) => (
-          <Link
-            href={`/post/${card.slug}`}
+          <Card
+            slug={card.slug}
+            src={profile}
+            alt='Imagem'
+            title={card.title}
+            subtitle={card.subtitle}
+            author={card.author}
+            date={card.date}
             key={card.id}
-            className='bg-white rounded-lg overflow-hidden shadow-md'
           >
-            <div className='p-4'>
-              <div className='bg-gray-200 rounded-xl'>
-                <Image
-                  className='object-cover w-full h-[360px] rounded-xl'
-                  src={profile}
-                  alt='Imagem'
-                />
-              </div>
-              <h3 className='text-xl font-bold'>{card.title}</h3>
-              <h4 className='text-lg mb-2'>{card.subtitle}</h4>
-              <p className='text-sm text-gray-600'>
-                Por {card.author} | {card.date}
-              </p>
-              <p className='text-black underline mt-2 inline-block'>
-                Veja a cobertura completa pela Transmídia
-              </p>
-            </div>
-          </Link>
+            Veja a cobertura completa pela Transmídia
+          </Card>
         ))}
       </div>
     </main>

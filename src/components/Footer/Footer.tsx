@@ -1,20 +1,30 @@
+import Image from 'next/image';
 import { Twitter, Facebook, Instagram, Linkedin } from 'lucide-react';
+import logo from '../../../public/images/logo.svg';
+import twitter from '../../assets/social/twitter.png';
+import facebook from '../../assets/social/facebook.png';
+import instagram from '../../assets/social/instagram.png';
+import tiktok from '../../assets/social/tiktok.png';
+import linkedin from '../../assets/social/linkedin.png';
+import { Separator } from '../ui/separator';
 
 export const Footer = () => {
   return (
-    <footer className='bg-[#E8FE41] text-black p-4'>
-      <div className='flex justify-center space-x-4 mb-4'>
-        <Twitter size={24} />
-        <Facebook size={24} />
-        <Instagram size={24} />
-        <svg className='w-6 h-6' viewBox='0 0 24 24' fill='currentColor'>
-          <path d='M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z' />
-        </svg>
-        <Linkedin size={24} />
+    <footer className='bg-[#CFB2F5] text-black p-4'>
+      <div className='flex items-center justify-center'>
+      <Image src={logo} alt='Transmídia' className='w-[268px]'/>
       </div>
-      <div className='flex justify-between'>
-        <div>
-          <h4 className='font-bold'>Institucional</h4>
+      <div className='flex justify-center space-x-4 my-2'>
+        <Image src={twitter} alt='Transmídia' width={24} height={0} />
+        <Image src={facebook} alt='Transmídia' width={24} height={0} />
+        <Image src={instagram} alt='Transmídia' width={24} height={0} />
+        <Image src={tiktok} alt='Transmídia' width={24} height={0} />
+        <Image src={linkedin} alt='Transmídia' width={24} height={0} />
+      </div>
+      <div className='flex justify-between mb-10'>
+        <div className='min-w-[160px]'>
+          <h4 className='font-bold text-white'>Institucional</h4>
+          <Separator className='bg-black' />
           <ul className='text-sm'>
             <li>Quem somos</li>
             <li>Apoie Transmídia</li>
@@ -22,8 +32,9 @@ export const Footer = () => {
             <li>Política de privacidade</li>
           </ul>
         </div>
-        <div>
-          <h4 className='font-bold'>Jornalismo</h4>
+        <div className='text-right min-w-[160px]'>
+          <h4 className='font-bold text-white'>Jornalismo</h4>
+          <Separator className='bg-black' />
           <ul className='text-sm'>
             <li>Acué</li>
             <li>Saúde</li>

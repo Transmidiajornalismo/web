@@ -11,6 +11,7 @@ import {
   Linkedin,
 } from 'lucide-react';
 import { useState } from 'react';
+import { Separator } from '../ui/separator';
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,7 +31,7 @@ export const Navbar = () => {
   };
   return (
     <>
-      <nav className='fixed bottom-0 left-0 right-0 bg-[#E8FE41] text-black flex justify-between items-center p-2'>
+      <nav className='fixed bottom-0 left-0 right-0 bg-[#E1E993] text-black flex justify-between items-center p-2 rounded-tr-xl rounded-tl-xl'>
         <button className='font-bold'>APOIE</button>
         <button>
           <svg
@@ -119,6 +120,7 @@ export const Navbar = () => {
                     Quem somos
                   </a>
                 </li>
+                <Separator className='bg-black'/>
                 <li>
                   <button
                     onClick={toggleEditorias}
@@ -133,6 +135,8 @@ export const Navbar = () => {
                     />
                   </button>
                   {isEditoriasOpen && (
+                    <>
+                    <Separator className='bg-black my-2'/>
                     <ul className='mt-2 ml-4 space-y-2'>
                       {Object.keys(EDITORIAS).map((editoria) => (
                         <li
@@ -145,8 +149,10 @@ export const Navbar = () => {
                         </li>
                       ))}
                     </ul>
+                    </>
                   )}
                 </li>
+                <Separator className='bg-black'/>
                 <li>
                   <a href='#' className='hover:underline'>
                     Colunas

@@ -6,7 +6,7 @@ import { Footer } from '@/components/Footer/Footer';
 import { Navbar } from '@/components/Navbar/Navbar';
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from '../../public/images/logo.svg';
+import logo from '../../public/images/logo_dual_color.svg';
 
 const rubik = Rubik({ subsets: ['latin'] });
 
@@ -24,11 +24,11 @@ export default function RootLayout({
     <html lang='pt-br'>
       <body
         className={cn(
-          `flex flex-col min-h-screen bg-black text-white bg-[#1C1C14]`,
+          `flex flex-col min-h-screen bg-[#FCFAEC] text-black`,
           rubik.className,
         )}
       >
-        <header className='p-4 flex justify-between items-center'>
+        <header className='p-6 flex justify-center items-center bg-[#2D2D2D]'>
           <Link href='/'>
             <Image src={logo} alt='Transmídia' />
           </Link>
