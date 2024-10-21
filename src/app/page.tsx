@@ -135,10 +135,10 @@ export default function Component() {
                 className='w-full flex-shrink-0 flex space-x-4 p-2'
               >
                 <div className='w-3/4 bg-gray-200 rounded-lg p-2'>
-                  <span className='bg-yellow-300 text-black px-2 py-1 rounded text-sm'>
-                    {item.category}
-                  </span>
-                  <div className='mt-1 bg-purple-200 w-full h-[400px] rounded-xl flex justify-center items-center'>
+                  <div className='relative mt-2 bg-purple-200 w-full h-[400px] rounded-xl flex justify-center items-center'>
+                    <span className='absolute top-2 left-2 bg-yellow-300 text-black mt-2 px-2 py-1 rounded text-sm'>
+                      {item.category}
+                    </span>
                     <Image
                       className='py-2 object-cover rounded-xl w-full h-full'
                       src={profile}
