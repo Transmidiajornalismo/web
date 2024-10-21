@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
-import { Rubik } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Footer } from '@/components/Footer/Footer';
 import { Navbar } from '@/components/Navbar/Navbar';
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from '../../public/images/logo_dual_color.svg';
+import logo from '../../public/images/logo_neon.svg';
 
-const rubik = Rubik({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Transmídia',
@@ -25,7 +25,7 @@ export default function RootLayout({
       <body
         className={cn(
           `flex flex-col min-h-screen bg-[#FCFAEC] text-black`,
-          rubik.className,
+          inter.className,
         )}
       >
         <header className='p-6 flex justify-center items-center bg-[#2D2D2D]'>

@@ -63,7 +63,7 @@ export default function Marsha() {
           <Link
             href={`/post/${card.slug}`}
             key={card.id}
-            className='bg-white rounded-lg overflow-hidden shadow-md'
+            className='bg-[#F6F4E7] rounded-lg overflow-hidden shadow-md'
           >
             <div className='p-4'>
               <div className='bg-gray-200 rounded-xl'>

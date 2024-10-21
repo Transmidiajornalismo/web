@@ -20,15 +20,18 @@ export const Card = ({
   subtitle,
   author,
   date,
-  children
+  children,
 }: ICardProps) => {
   return (
     <Link
       href={`/post/${slug}`}
-      className='bg-white rounded-lg overflow-hidden shadow-md'
+      className='bg-[#F6F4E7] rounded-lg overflow-hidden shadow-md'
     >
       <div className='p-4'>
-        <div className='bg-gray-200 rounded-xl mb-4'>
+        <div className='relative flex bg-gray-200 rounded-xl mb-4'>
+          <span className='absolute top-2 left-2 bg-yellow-300 text-black px-2 py-1 rounded text-xs font-semibold'>
+            Editoria
+          </span>
           <Image
             className='object-cover w-full h-[360px] rounded-xl'
             src={src}
@@ -40,9 +43,7 @@ export const Card = ({
         <p className='text-sm text-[#47483B]'>
           Por {author} | {date}
         </p>
-        <p className='text-black underline mt-2 inline-block'>
-          { children }
-        </p>
+        <p className='text-black underline mt-2 inline-block'>{children}</p>
       </div>
     </Link>
   );
