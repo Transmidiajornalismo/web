@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import profile from '../../../../public/images/image.jpg';
-import ex from '../../../../public/images/ex.jpg';
+
 
 interface IPostProps {
   params: {
@@ -22,7 +22,7 @@ export default function Post({ params }: IPostProps) {
               alt='Author'
             />
           </div>
-          <div className="mb-6">
+          {/* <div className="mb-6">
             <div className='w-[100w]'>
               <Image 
                 // width={1200}
@@ -37,7 +37,7 @@ export default function Post({ params }: IPostProps) {
                 <p className="text-sm text-gray-700">Legenda da imagem: Breve descrição do que está sendo mostrado na fotografia.</p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className='py-4'>
           <span className='text-xs'>Categoria</span>
