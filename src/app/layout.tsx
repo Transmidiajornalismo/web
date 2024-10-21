@@ -6,7 +6,7 @@ import { Footer } from '@/components/Footer/Footer';
 import { Navbar } from '@/components/Navbar/Navbar';
 import Link from 'next/link';
 import Image from 'next/image';
-import logo from '../../public/images/logo_neon.svg';
+import logo from '../../public/images/logo_dual_color.svg';
 
 const inter = Inter({ subsets: ['latin'] });
 

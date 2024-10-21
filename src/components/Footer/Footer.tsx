@@ -14,7 +14,7 @@ export const Footer = () => {
         <div className='min-w-[160px]'>
           <h4 className='font-bold text-white'>Institucional</h4>
           <Separator className='bg-black' />
-          <ul className='text-sm'>
+          <ul className='text-sm font-medium leading-6'>
             <li>Quem somos</li>
             <li>Apoie Transmídia</li>
             <li>Termos de uso</li>
@@ -24,7 +24,7 @@ export const Footer = () => {
         <div className='text-right min-w-[160px]'>
           <h4 className='font-bold text-white'>Jornalismo</h4>
           <Separator className='bg-black' />
-          <ul className='text-sm'>
+          <ul className='text-sm font-medium leading-6'>
             <li>Acué</li>
             <li>Saúde</li>
             <li>Cultura</li>

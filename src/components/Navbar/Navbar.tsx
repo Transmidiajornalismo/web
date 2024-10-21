@@ -25,8 +25,8 @@ export const Navbar = () => {
   return (
     <>
       <nav className='fixed bottom-0 left-0 right-0 bg-[#E1E993] text-black flex justify-between items-center p-2 rounded-tr-xl rounded-tl-xl'>
-        <button className='font-bold'>APOIE</button>
-        <button>
+        <button className='font-bold flex justify-center w-[25vw]'>APOIE</button>
+        <button className='font-bold flex justify-center w-[25vw]'>
           <svg
             className='w-6 h-6'
             fill='none'
@@ -42,10 +42,10 @@ export const Navbar = () => {
             />
           </svg>
         </button>
-        <button onClick={toggleSearch}>
+        <button onClick={toggleSearch} className='font-bold flex justify-center w-[25vw]'>
           <Search className='w-6 h-6' />
         </button>
-        <button onClick={toggleMenu}>
+        <button onClick={toggleMenu} className='font-bold flex justify-center w-[25vw]'>
           <svg
             className='w-6 h-6'
             fill='none'

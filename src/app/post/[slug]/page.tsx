@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import profile from '../../../../public/images/image.jpg';
+import ex from '../../../../public/images/ex.jpg';
 
 interface IPostProps {
   params: {
@@ -21,6 +22,22 @@ export default function Post({ params }: IPostProps) {
               alt='Author'
             />
           </div>
+          <div className="mb-6">
+            <div className='w-[100w]'>
+              <Image 
+                // width={1200}
+                fill
+                // height={0}
+                src={ex}
+                alt="Article main image" 
+                className="min-w-full rounded-lg"
+              />
+              <div className="mt-2 text-right">
+                <p className="text-sm text-gray-500 italic">Foto: Nome do Fotógrafo</p>
+                <p className="text-sm text-gray-700">Legenda da imagem: Breve descrição do que está sendo mostrado na fotografia.</p>
+              </div>
+            </div>
+          </div>
         </div>
         <div className='py-4'>
           <span className='text-xs'>Categoria</span>
@@ -32,7 +49,7 @@ export default function Post({ params }: IPostProps) {
         </div>
 
         <div className='space-y-4'>
-          <p>
+          <p className='indent-8 text-justify leading-6'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut
             tempor risus. Phasellus sodales lorem et sapien viverra, a
             ullamcorper arcu mollis. Ut sed porta odio. Sed consequat porta
@@ -40,7 +57,7 @@ export default function Post({ params }: IPostProps) {
             dolor accumsan id. Integer a lacinia dolor. Maecenas fringilla
             ligula in sodales tempor. Curabitur eget pulvinar sapien.
           </p>
-          <p>
+          <p className='indent-8 text-justify leading-6'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut
             tempor risus. Phasellus sodales lorem et sapien viverra, a
             ullamcorper arcu mollis. Ut sed porta odio. Sed consequat porta

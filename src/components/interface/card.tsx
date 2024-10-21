@@ -25,7 +25,7 @@ export const Card = ({
   return (
     <Link
       href={`/post/${slug}`}
-      className='bg-[#F6F4E7] rounded-lg overflow-hidden shadow-md'
+      className='bg-[#F6F4E7] border-2 rounded-lg overflow-hidden shadow-lg'
     >
       <div className='p-4'>
         <div className='relative flex bg-gray-200 rounded-xl mb-4'>
@@ -43,7 +43,7 @@ export const Card = ({
         <p className='text-sm text-[#47483B]'>
           Por {author} | {date}
         </p>
-        <p className='text-black underline mt-2 inline-block'>{children}</p>
+        <p className='text-[#47483B] mt-2 inline-block'>{children}</p>
       </div>
     </Link>
   );
