@@ -1,8 +1,5 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import profile from '../../../../public/images/image.jpg';
 import { EDITORIAS } from '@/constants/editorias';
-import { cn } from '@/lib/utils';
+import { EditoriasLayout } from '@/components/interface/editorias';
 
 const cardItems = [
   {
@@ -51,40 +48,12 @@ export default function Ubuntu() {
   const { title, description, color, textColor } = EDITORIAS.UBUNTU;
 
   return (
-    <main className='flex-grow text-gray-500 p-4'>
-      <div className='flex flex-col justify-center items-center py-8'>
-        <h1 className='text-6xl font-bold text-black mb-2'>{title}</h1>
-        <p className={cn('rounded-full px-4 py-1', `${color} ${textColor}`)}>
-          {description}
-        </p>
-      </div>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4'>
-        {cardItems.map((card) => (
-          <Link
-            href={`/post/${card.slug}`}
-            key={card.id}
-            className='bg-white rounded-lg overflow-hidden shadow-md'
-          >
-            <div className='p-4'>
-              <div className='bg-gray-200 rounded-xl'>
-                <Image
-                  className='object-cover w-full h-[360px] rounded-xl'
-                  src={profile}
-                  alt='Imagem'
-                />
-              </div>
-              <h3 className='text-xl font-bold'>{card.title}</h3>
-              <h4 className='text-lg mb-2'>{card.subtitle}</h4>
-              <p className='text-sm text-gray-600'>
-                Por {card.author} | {card.date}
-              </p>
-              <p className='text-black underline mt-2 inline-block'>
-                Veja a cobertura completa pela Transmídia
-              </p>
-            </div>
-          </Link>
-        ))}
-      </div>
-    </main>
+    <EditoriasLayout
+      title={title}
+      description={description}
+      color={color}
+      textColor={textColor}
+      items={cardItems}
+    />
   );
 }
