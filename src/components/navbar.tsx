@@ -3,8 +3,8 @@
 import { EDITORIAS } from '@/constants/editorias';
 import { Search, X, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
-import { Separator } from '../ui/separator';
-import { Social } from '../social';
+import { Separator } from './ui/separator';
+import { Social } from './social';
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

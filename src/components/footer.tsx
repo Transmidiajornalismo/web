@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import logo from '../../../public/images/logo.svg';
-import { Separator } from '../ui/separator';
-import { Social } from '../social';
+import logo from '../../public/images/logo.svg';
+import { Separator } from '@/components/ui/separator';
+import { Social } from './social';
 
 export const Footer = () => {
   return (

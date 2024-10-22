@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import profile from '../../../../public/images/image.jpg';
-
+import ex from '../../../../public/images/ex.jpg';
 
 interface IPostProps {
   params: {
@@ -12,6 +12,24 @@ export default function Post({ params }: IPostProps) {
   return (
     <main className='flex-grow p-4'>
       <div className='max-w-4xl mx-auto'>
+        <div className='max-w-3xl mx-auto'>
+          <div className='relative'>
+            <div className='aspect-[4/3] relative'>
+              <Image
+                src={ex}
+                alt='Article main image'
+                layout='fill'
+                objectFit='cover'
+                className='rounded-lg'
+              />
+            </div>
+            <div className='mt-2 text-right'>
+              <p className='text-sm text-gray-500'>
+                Imagem por <span className='font-bold'>Autora</span>
+              </p>
+            </div>
+          </div>
+        </div>
         <div className='relative w-48 h-48 mx-auto mb-4'>
           <div className='absolute inset-0 bg-red-300 rounded-full'></div>
           <div className='absolute inset-2 bg-[#fffdf5] rounded-full'></div>
@@ -22,22 +40,6 @@ export default function Post({ params }: IPostProps) {
               alt='Author'
             />
           </div>
-          {/* <div className="mb-6">
-            <div className='w-[100w]'>
-              <Image 
-                // width={1200}
-                fill
-                // height={0}
-                src={ex}
-                alt="Article main image" 
-                className="min-w-full rounded-lg"
-              />
-              <div className="mt-2 text-right">
-                <p className="text-sm text-gray-500 italic">Foto: Nome do Fotógrafo</p>
-                <p className="text-sm text-gray-700">Legenda da imagem: Breve descrição do que está sendo mostrado na fotografia.</p>
-              </div>
-            </div>
-          </div> */}
         </div>
         <div className='py-4'>
           <span className='text-xs'>Categoria</span>
