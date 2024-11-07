@@ -83,7 +83,7 @@ export const Slide = () => {
           className='flex transition-transform duration-300 ease-in-out'
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
-          {newsItems.map((item, index) => (
+          {newsItems.map((item) => (
             <div
               key={item.id}
               className='w-full flex-shrink-0 flex lg:justify-center space-x-1 p-2'
