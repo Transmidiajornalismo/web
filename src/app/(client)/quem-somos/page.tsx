@@ -30,11 +30,9 @@ export default function About() {
 
           <p className='text-2xl font-bold text-black'>Visão</p>
           <p className='indent-8 text-justify leading-6'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut
-            tempor risus. Phasellus sodales lorem et sapien viverra, a
-            ullamcorper arcu mollis. Ut sed porta odio. Sed consequat porta
-            pulvinar. Pellentesque semper efficitur nunc, fringilla faucibus
-            dolor accumsan id.
+            <li>Jornalismo sem transfobia</li>
+            <li>Jornalismo interseccional</li>
+            <li>Jornalismo coletivo e colaborativo</li>
           </p>
 
           <p className='text-2xl font-bold text-black'>Valores</p>

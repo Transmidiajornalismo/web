@@ -25,7 +25,7 @@ export async function GET(
       const authorResponse = await fetch(authorUrl);
       const authorData = await authorResponse.json();
 
-      const imageUrl = post['_links']['wp:attachment'][0].href;
+      const imageUrl = post['_links']['wp:featuredmedia'][0].href;
       const imageResponse = await fetch(imageUrl);
       const imageData = await imageResponse.json();
 
@@ -40,7 +40,7 @@ export async function GET(
         title: post.title.rendered,
         category,
         author: authorData.name,
-        imageURL: imageData[0].guid.rendered,
+        imageURL: imageData.guid ? imageData.guid.rendered : '',
       });
     }
 

@@ -30,23 +30,22 @@ export default function Component() {
 
   if (!isMounted) <div>Loading...</div>;
 
-  console.log('deploy');
+  console.log(slidePosts);
 
   return (
     <main className='flex-grow text-gray-500 p-4'>
-      <Link
-        href='/post/12'
-        className='flex items-center justify-center min-w-full px-8'
-      >
-        <Image
-          src='http://34.18.51.177/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-15-at-17.50.17.jpeg'
-          width={256 * 3}
-          height={0}
-          alt='Manifesto image'
-          objectFit='cover'
-          className='rounded-lg'
-        />
-      </Link>
+      <div className='flex items-center justify-center min-w-full px-8'>
+        <Link href='/post/12'>
+          <Image
+            src='http://34.18.51.177/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-15-at-17.50.17.jpeg'
+            width={256 * 3}
+            height={0}
+            alt='Manifesto image'
+            objectFit='cover'
+            className='rounded-lg'
+          />
+        </Link>
+      </div>
       <Slide posts={slidePosts} />
 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4'>
