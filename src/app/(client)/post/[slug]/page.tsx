@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import profile from '../../../../public/images/image.jpg';
 import parse from 'html-react-parser';
 import { useState, useEffect } from 'react';
 
@@ -17,6 +16,8 @@ interface PostModel {
   title: string;
   content: string;
   imageURL: string;
+  author: string;
+  category: string;
 }
 
 export default function Post({ params }: IPostProps) {
@@ -40,8 +41,6 @@ export default function Post({ params }: IPostProps) {
     return <div>Loading...</div>;
   }
 
-  // aspect-[4/3]
-
   return (
     <main className='flex-grow p-4'>
       <div className='max-w-4xl mx-auto'>
@@ -50,20 +49,17 @@ export default function Post({ params }: IPostProps) {
             <div className='relative'>
               <Image
                 src={post?.imageURL!}
-                width={256 * 3} // manifesto config
+                width={256 * 3}
                 height={0}
                 alt='Manifesto image'
                 objectFit='cover'
                 className='rounded-lg'
-                // alt='Article main image'
-                // layout='fill'
-                // objectFit='cover'
-                // className='rounded-lg'
               />
             </div>
             <div className='mt-2 text-right'>
               <p className='text-sm text-gray-500'>
-                Imagem por <span className='font-bold'>Autora</span>
+                {post?.title === 'Manifesto' &&
+                  parse("Imagem por <span className='font-bold'>Autora</span>")}
               </p>
             </div>
           </div>
@@ -80,11 +76,11 @@ export default function Post({ params }: IPostProps) {
           </div>
         </div> */}
         <div className='py-4'>
-          <span className='text-xs'>Categoria</span>
+          <span className='text-xs'>{post?.category}</span>
           <h2 className='text-4xl'>{post?.title}</h2>
           <div className='flex justify-between text-gray-500'>
-            <p className='text-sm'>Autora</p>
-            <p className='text-sm'>22.05.2024</p>
+            <p className='text-sm'>{post?.author}</p>
+            <p className='text-sm'>{post?.date}</p>
           </div>
         </div>
 
