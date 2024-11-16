@@ -5,6 +5,7 @@ import { Search, X, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import { Separator } from './ui/separator';
 import { Social } from './social';
+import Link from 'next/link';
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,9 +26,13 @@ export const Navbar = () => {
   return (
     <>
       <nav className='fixed bottom-0 left-0 right-0 bg-[#E1E993] text-black flex justify-between items-center p-2 rounded-tr-xl rounded-tl-xl'>
-        <button className='font-bold flex justify-center w-[25vw]'>
+        <Link
+          href='https://www.catarse.me/transmidia_vozes_trans_na_comunicacao_99ab?ref=project_link'
+          className='font-bold flex justify-center w-[25vw]'
+          target='_blank'
+        >
           APOIE
-        </button>
+        </Link>
         <button className='font-bold flex justify-center w-[25vw]'>
           <svg
             className='w-6 h-6'

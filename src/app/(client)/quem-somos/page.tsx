@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import profile from '../../../public/images/image.jpg';
-import ex from '../../../public/images/ex.jpg';
+import quem from '@/assets/info/quem-somos.svg';
 import frame from '../../../public/images/frame.svg';
 
 export default function About() {
@@ -44,21 +44,22 @@ export default function About() {
             para mudar esse cenário e reafirmar a nossa existência. Nosso mote
             é:
           </p>
-          <div className='p-6 min-h-[300px] flex items-center justify-center'>
+
+          <div className='p-6 min-h-[300px] flex items-center justify-center bg-[#2D2D2D] '>
             <div className='relative max-w-md w-full aspect-square'>
               <Image
-                src={frame}
+                src={quem}
                 alt='Decorative frame'
                 layout='fill'
                 objectFit='contain'
                 className='pointer-events-none'
               />
-              <div className='absolute inset-0 flex items-center justify-center p-10'>
+              {/* <div className='absolute inset-0 flex items-center justify-center p-10'>
                 <p className='text-2xl leading-10'>
                   &quot;Falar sobre transgeneridade, infelizmente, ainda é falar
                   sobre um assunto espinhoso.&quot;
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

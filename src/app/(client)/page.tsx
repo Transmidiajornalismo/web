@@ -1,8 +1,11 @@
 'use client';
 
-import ex from '../../public/images/ex.jpg';
+import ex from '../../../public/images/ex.jpg';
 import { Card } from '@/components/interface/card';
 import { Slide } from '@/components/slide';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 const cardItems = [
   {
@@ -47,11 +50,49 @@ const cardItems = [
   },
 ];
 
+interface PostModel {
+  id: number;
+  date: string;
+  title: string;
+  category: string;
+  author: string;
+  imageURL: string;
+}
+
 export default function Component() {
+  const [isMounted, setIsMounted] = useState(false);
+  const [posts, setPosts] = useState<PostModel[]>([]);
+
+  useEffect(() => {
+    const getPost = async () => {
+      const response = await fetch(`/api/posts`);
+      const data = await response.json();
+
+      setPosts(data);
+      setIsMounted(true);
+    };
+
+    getPost();
+  }, [isMounted]);
+
+  if (!isMounted) <div>Loading...</div>;
+
   return (
     <main className='flex-grow text-gray-500 p-4'>
-      <h2 className='text-6xl font-bold mb-4'>Manifesto</h2>
-      <Slide />
+      <Link
+        href='/post/12'
+        className='flex items-center justify-center min-w-full px-8'
+      >
+        <Image
+          src='http://34.18.51.177/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-15-at-17.50.17.jpeg'
+          width={256 * 3}
+          height={0}
+          alt='Manifesto image'
+          objectFit='cover'
+          className='rounded-lg'
+        />
+      </Link>
+      <Slide posts={posts} />
 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4'>
         {cardItems.map((card) => (
