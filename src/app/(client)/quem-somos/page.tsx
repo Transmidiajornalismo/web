@@ -17,7 +17,6 @@ const ProfileCard = ({ profile }: { profile: ProfileData }) => {
   return (
     <div className='relative flex bg-gray-200 rounded-xl mb-4 flex flex-col items-center p-4'>
       <div className='relative w-48 h-48 mx-auto mb-4'>
-        {/* <div className='absolute inset-0 bg-red-300 rounded-full'></div> */}
         <div className='absolute inset-2 bg-[#fffdf5] rounded-full'></div>
         <div className='absolute inset-4 bg-red-300 rounded-full overflow-hidden'>
           <Image
@@ -28,8 +27,8 @@ const ProfileCard = ({ profile }: { profile: ProfileData }) => {
         </div>
       </div>
       <h3 className='text-xl font-bold text-[#1C1C14]'>{profile.name}</h3>
-      <h3 className='text-xl font-bold text-[#1C1C14]'>{profile.role}</h3>
-      <h3 className='text-xl font-bold text-[#1C1C14]'>{profile.gender}</h3>
+      <h3 className='text-lg font-bold text-[#1C1C14]'>{profile.role}</h3>
+      <h3 className='text-lg font-bold text-[#1C1C14]'>{profile.gender}</h3>
       <p className='text-[#47483B] mt-2 inline-block'>{profile.details}</p>
     </div>
   );
@@ -100,6 +99,7 @@ export default function About() {
               </div> */}
             </div>
           </div>
+          <p className='text-2xl font-bold text-black'>Nossa equipe</p>
           {PROFILES.map((profile: any) => (
             <ProfileCard key={profile.name} profile={profile} />
           ))}

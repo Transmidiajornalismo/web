@@ -3,6 +3,7 @@ import logo from '../../public/images/logo.svg';
 import { Separator } from '@/components/ui/separator';
 import { Social } from './social';
 import { EDITORIAS } from '@/constants/editorias';
+import Link from 'next/link';
 
 export const Footer = () => {
   return (
@@ -16,10 +17,17 @@ export const Footer = () => {
           <h4 className='font-bold text-white'>Institucional</h4>
           <Separator className='bg-black' />
           <ul className='text-sm font-medium leading-6'>
-            <li>Quem somos</li>
-            <li>Apoie Transmídia</li>
-            <li>Termos de uso</li>
-            <li>Política de privacidade</li>
+            <li>
+              <Link href='/quem-somos'>Quem somos</Link>
+            </li>
+            <li>
+              <Link
+                href='https://www.catarse.me/transmidia_vozes_trans_na_comunicacao_99ab?ref=project_link'
+                target='_blank'
+              >
+                Apoie Transmídia
+              </Link>
+            </li>
           </ul>
         </div>
         <div className='text-right min-w-[160px]'>
