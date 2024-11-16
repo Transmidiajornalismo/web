@@ -49,7 +49,7 @@ export default function Post({ params }: IPostProps) {
             <div className='relative'>
               <Image
                 src={post?.imageURL!}
-                width={256 * 3}
+                width={1024}
                 height={0}
                 alt='Manifesto image'
                 objectFit='cover'
@@ -66,17 +66,6 @@ export default function Post({ params }: IPostProps) {
             </div>
           </div>
         </div>
-        {/* <div className='relative w-48 h-48 mx-auto mb-4'>
-          <div className='absolute inset-0 bg-red-300 rounded-full'></div>
-          <div className='absolute inset-2 bg-[#fffdf5] rounded-full'></div>
-          <div className='absolute inset-4 bg-red-300 rounded-full overflow-hidden'>
-            <Image
-              className='w-full h-full object-cover'
-              src={profile}
-              alt='Author'
-            />
-          </div>
-        </div> */}
         <div className='py-4'>
           <span className='text-xs font-bold'>
             {post?.category !== 'uncategorized' && post?.category}

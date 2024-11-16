@@ -30,15 +30,13 @@ export default function Component() {
 
   if (!isMounted) <div>Loading...</div>;
 
-  console.log(slidePosts);
-
   return (
     <main className='flex-grow text-gray-500 p-4'>
       <div className='flex items-center justify-center min-w-full px-8'>
         <Link href='/post/12'>
           <Image
             src='http://34.18.51.177/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-15-at-17.50.17.jpeg'
-            width={256 * 3}
+            width={1024}
             height={0}
             alt='Manifesto image'
             objectFit='cover'

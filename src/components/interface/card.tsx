@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { PostModel } from '@/models/post.model';
 
 interface ICardProps {
@@ -22,7 +22,7 @@ export const Card = ({ post, children }: ICardProps) => {
             className='object-cover w-full h-[360px] rounded-xl'
             src={post.imageURL}
             alt={post.title}
-            width={256}
+            width={1024}
             height={0}
           />
         </div>

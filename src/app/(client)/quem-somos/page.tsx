@@ -1,7 +1,36 @@
 import Image from 'next/image';
-import profile from '../../../public/images/image.jpg';
 import quem from '@/assets/info/quem-somos.svg';
-import frame from '../../../public/images/frame.svg';
+import { PROFILES } from '@/constants/profiles';
+
+interface ProfileData {
+  name: string;
+  image: string;
+  gender: string;
+  role: string;
+  details: string;
+}
+
+const ProfileCard = ({ profile }: { profile: ProfileData }) => {
+  return (
+    <div className='relative flex bg-gray-200 rounded-xl mb-4 flex flex-col items-center p-4'>
+      <div className='relative w-48 h-48 mx-auto mb-4'>
+        {/* <div className='absolute inset-0 bg-red-300 rounded-full'></div> */}
+        <div className='absolute inset-2 bg-[#fffdf5] rounded-full'></div>
+        <div className='absolute inset-4 bg-red-300 rounded-full overflow-hidden'>
+          <Image
+            className='w-full h-full object-cover'
+            src={profile.image}
+            alt='Author'
+          />
+        </div>
+      </div>
+      <h3 className='text-xl font-bold text-[#1C1C14]'>{profile.name}</h3>
+      <h3 className='text-xl font-bold text-[#1C1C14]'>{profile.role}</h3>
+      <h3 className='text-xl font-bold text-[#1C1C14]'>{profile.gender}</h3>
+      <p className='text-[#47483B] mt-2 inline-block'>{profile.details}</p>
+    </div>
+  );
+};
 
 export default function About() {
   return (
@@ -60,6 +89,9 @@ export default function About() {
               </div> */}
             </div>
           </div>
+          {PROFILES.map((profile: any) => (
+            <ProfileCard key={profile.name} profile={profile} />
+          ))}
         </div>
       </div>
     </main>
