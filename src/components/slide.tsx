@@ -113,7 +113,7 @@ export const Slide = ({ posts }: ISlideProps) => {
             ></button>
           ))}
         </div>
-        <Link href='#' className='text-black underline flex items-center'>
+        {/* <Link href='#' className='text-black underline flex items-center'>
           Veja as notícias recentes
           <svg
             className='w-4 h-4 ml-1'
@@ -129,7 +129,7 @@ export const Slide = ({ posts }: ISlideProps) => {
               d='M9 5l7 7-7 7'
             />
           </svg>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
