@@ -30,6 +30,8 @@ export default function Component() {
 
   if (!isMounted) <div>Loading...</div>;
 
+  console.log('deploy');
+
   return (
     <main className='flex-grow text-gray-500 p-4'>
       <Link
