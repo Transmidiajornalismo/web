@@ -59,7 +59,9 @@ export default function Post({ params }: IPostProps) {
             <div className='mt-2 text-right'>
               <p className='text-sm text-gray-500'>
                 {post?.title === 'Manifesto' &&
-                  parse("Imagem por <span className='font-bold'>Autora</span>")}
+                  parse(
+                    "Imagem por <span className='font-bold'>Brune Hebert</span>",
+                  )}
               </p>
             </div>
           </div>
