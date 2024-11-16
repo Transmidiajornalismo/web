@@ -27,16 +27,7 @@ export const EditoriasLayout = ({
       </div>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4'>
         {items.map((item: any) => (
-          <Card
-            slug={item.slug}
-            src={profile}
-            alt='Imagem'
-            title={item.title}
-            subtitle={item.subtitle}
-            author={item.author}
-            date={item.date}
-            key={item.id}
-          >
+          <Card post={item} key={item.id}>
             Veja a cobertura completa pela Transmídia
           </Card>
         ))}
