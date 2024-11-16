@@ -199,13 +199,6 @@ export const Navbar = () => {
             </nav>
             <Social />
           </div>
-          <div className='absolute bottom-0 left-0 right-0 h-64 pointer-events-none'>
-            <div className='relative h-full'>
-              <div className='absolute top-1/4 left-1/4 w-16 h-16 bg-gray-200 rounded-full opacity-25'></div>
-              <div className='absolute top-1/2 left-1/2 w-24 h-24 bg-gray-200 rounded-sm opacity-25'></div>
-              <div className='absolute bottom-1/4 right-1/4 w-0 h-0 border-l-[40px] border-l-transparent border-b-[69.3px] border-b-gray-200 border-r-[40px] border-r-transparent opacity-25'></div>
-            </div>
-          </div>
         </div>
       )}
     </>
