@@ -78,7 +78,9 @@ export default function Post({ params }: IPostProps) {
           </div>
         </div> */}
         <div className='py-4'>
-          <span className='text-xs font-bold'>{post?.category}</span>
+          <span className='text-xs font-bold'>
+            {post?.category !== 'uncategorized' && post?.category}
+          </span>
           <h2 className='text-4xl'>{post?.title}</h2>
           <div className='flex justify-between text-gray-500'>
             <p className='text-sm'>{post?.author}</p>
