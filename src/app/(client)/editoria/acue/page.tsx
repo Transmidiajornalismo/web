@@ -1,10 +1,8 @@
 import { EDITORIAS } from '@/constants/editorias';
 import { EditoriasLayout } from '@/components/interface/editorias';
 
-const cardItems: any = [];
-
 export default function Acue() {
-  const { title, description, color, textColor } = EDITORIAS.ACUE;
+  const { id, title, description, color, textColor } = EDITORIAS.ACUE;
 
   return (
     <EditoriasLayout
@@ -12,7 +10,7 @@ export default function Acue() {
       description={description}
       color={color}
       textColor={textColor}
-      posts={cardItems}
+      id={id}
     />
   );
 }

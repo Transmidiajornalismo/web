@@ -1,22 +1,42 @@
+'use client';
+
 import { cn } from '@/lib/utils';
 import { Card } from './card';
 import { PostModel } from '@/models/post.model';
+import { useState, useEffect } from 'react';
 
 interface IEditoriasLayoutProps {
+  id: string;
   title: string;
   description: string;
   color: string;
   textColor: string;
-  posts: PostModel[];
 }
 
 export const EditoriasLayout = ({
+  id,
   title,
   description,
   color,
   textColor,
-  posts,
 }: IEditoriasLayoutProps) => {
+  const [isMounted, setIsMounted] = useState(false);
+  const [posts, setPosts] = useState<PostModel[]>([]);
+
+  useEffect(() => {
+    const getPost = async () => {
+      const response = await fetch(`/api/posts/categories/${id}`);
+      const data = await response.json();
+
+      setPosts(data);
+      setIsMounted(true);
+    };
+
+    getPost();
+  }, [isMounted]);
+
+  if (!isMounted) <div>Loading...</div>;
+
   return (
     <main className='flex-grow text-gray-500 p-4'>
       <div className='flex flex-col justify-center items-center py-8'>

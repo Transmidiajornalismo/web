@@ -1,7 +1,14 @@
 'use client';
 
 import { EDITORIAS } from '@/constants/editorias';
-import { Search, X, ChevronDown } from 'lucide-react';
+import {
+  Search,
+  X,
+  ChevronDown,
+  Share2,
+  Facebook,
+  MessageCircle,
+} from 'lucide-react';
 import { useState } from 'react';
 import { Separator } from './ui/separator';
 import { Social } from './social';
@@ -9,8 +16,27 @@ import Link from 'next/link';
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isShareOpen, setIsShareOpen] = useState(false);
   const [isEditoriasOpen, setIsEditoriasOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
+
+  const shareOnFacebook = () => {
+    window.open(
+      `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+        shareUrl,
+      )}`,
+      '_blank',
+    );
+  };
+
+  const shareOnWhatsApp = () => {
+    window.open(
+      `https://api.whatsapp.com/send?text=${encodeURIComponent(shareUrl)}`,
+      '_blank',
+    );
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -33,22 +59,27 @@ export const Navbar = () => {
         >
           APOIE
         </Link>
-        <button className='font-bold flex justify-center w-[25vw]'>
-          <svg
-            className='w-6 h-6'
-            fill='none'
-            stroke='currentColor'
-            viewBox='0 0 24 24'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              strokeWidth={2}
-              d='M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z'
-            />
-          </svg>
-        </button>
+        <div className='relative'>
+          <button onClick={() => setIsShareOpen(!isShareOpen)}>
+            <Share2 className='w-6 h-6' />
+          </button>
+          {isShareOpen && (
+            <div className='absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 bg-white rounded-lg shadow-lg p-2 flex space-x-2'>
+              <button
+                onClick={shareOnFacebook}
+                className='p-2 hover:bg-gray-100 rounded-full'
+              >
+                <Facebook className='w-6 h-6' />
+              </button>
+              <button
+                onClick={shareOnWhatsApp}
+                className='p-2 hover:bg-gray-100 rounded-full'
+              >
+                <MessageCircle className='w-6 h-6' />
+              </button>
+            </div>
+          )}
+        </div>
         <button
           onClick={toggleSearch}
           className='font-bold flex justify-center w-[25vw]'

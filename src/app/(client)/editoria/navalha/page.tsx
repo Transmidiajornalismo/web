@@ -1,10 +1,8 @@
 import { EDITORIAS } from '@/constants/editorias';
 import { EditoriasLayout } from '@/components/interface/editorias';
 
-const cardItems: any = [];
-
 export default function Marsha() {
-  const { title, description, color, textColor } = EDITORIAS.NAVALHA;
+  const { id, title, description, color, textColor } = EDITORIAS.NAVALHA;
 
   return (
     <EditoriasLayout
@@ -12,7 +10,7 @@ export default function Marsha() {
       description={description}
       color={color}
       textColor={textColor}
-      posts={cardItems}
+      id={id}
     />
   );
 }

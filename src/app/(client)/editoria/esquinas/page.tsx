@@ -1,10 +1,8 @@
 import { EDITORIAS } from '@/constants/editorias';
 import { EditoriasLayout } from '@/components/interface/editorias';
 
-const cardItems: any = [];
-
 export default function Esquinas() {
-  const { title, description, color, textColor } = EDITORIAS.ESQUINAS;
+  const { id, title, description, color, textColor } = EDITORIAS.ESQUINAS;
 
   return (
     <EditoriasLayout
@@ -12,7 +10,7 @@ export default function Esquinas() {
       description={description}
       color={color}
       textColor={textColor}
-      posts={cardItems}
+      id={id}
     />
   );
 }
