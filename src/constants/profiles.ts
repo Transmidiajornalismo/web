@@ -1,7 +1,7 @@
-import cae from '@/assets/profile/cae.jpeg';
-import sanara from '@/assets/profile/sanara.jpeg';
-import agatha from '@/assets/profile/agatha.jpeg';
-import hela from '@/assets/profile/hela.jpeg';
+import cae from '@/assets/team/cae.jpeg';
+import sanara from '@/assets/team/sanara.jpeg';
+import agatha from '@/assets/team/agatha.jpeg';
+import hela from '@/assets/team/hela.jpeg';
 
 export const PROFILES = [
   {
