@@ -15,7 +15,9 @@ export const Slide = ({ posts }: ISlideProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % posts.length);
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + posts.length) % posts.length,
+    );
   };
 
   const prevSlide = () => {
@@ -26,23 +28,23 @@ export const Slide = ({ posts }: ISlideProps) => {
 
   useEffect(() => {
     setIsMounted(true);
-    const timer = setInterval(nextSlide, 10000);
+    const timer = setInterval(nextSlide, 5000);
     return () => clearInterval(timer);
-  }, [isMounted]);
+  }, [isMounted, posts]);
 
-  if (!isMounted) return null;
+  if (!isMounted && posts.length === 0) return null;
 
   return (
     <div className='relative rounded-lg p-4 mb-4'>
       <button
         onClick={prevSlide}
-        className='absolute left-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-1 shadow-md z-10'
+        className='overflow absolute left-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-1 shadow-md z-10'
       >
         <ChevronLeft className='w-6 h-6' />
       </button>
       <button
         onClick={nextSlide}
-        className='absolute right-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-1 shadow-md z-10'
+        className='overflow absolute right-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-1 shadow-md z-10'
       >
         <ChevronRight className='w-6 h-6' />
       </button>
