@@ -1,30 +1,16 @@
 import Link from 'next/link';
 import Image, { StaticImageData } from 'next/image';
+import { PostModel } from '@/models/post.model';
 
 interface ICardProps {
-  slug: string;
-  src: StaticImageData;
-  alt: string;
-  title: string;
-  subtitle: string;
-  author: string;
-  date: string;
+  post: PostModel;
   children: React.ReactNode;
 }
 
-export const Card = ({
-  slug,
-  src,
-  alt,
-  title,
-  subtitle,
-  author,
-  date,
-  children,
-}: ICardProps) => {
+export const Card = ({ post, children }: ICardProps) => {
   return (
     <Link
-      href={`/post/${slug}`}
+      href={`/post/${post.id}`}
       className='bg-[#F6F4E7] border-2 rounded-lg overflow-hidden shadow-lg'
     >
       <div className='p-4'>
@@ -34,14 +20,16 @@ export const Card = ({
           </span>
           <Image
             className='object-cover w-full h-[360px] rounded-xl'
-            src={src}
-            alt={alt}
+            src={post.imageURL}
+            alt={post.title}
+            width={256}
+            height={0}
           />
         </div>
-        <h3 className='text-xl font-bold text-[#1C1C14]'>{title}</h3>
-        <h4 className='text-lg mb-2 text-[#47483B]'>{subtitle}</h4>
+        <h3 className='text-xl font-bold text-[#1C1C14]'>{post.title}</h3>
+        {/* <h4 className='text-lg mb-2 text-[#47483B]'>{subtitle}</h4> */}
         <p className='text-sm text-[#47483B]'>
-          Por {author} | {date}
+          Por {post.author} | {post.date}
         </p>
         <p className='text-[#47483B] mt-2 inline-block'>{children}</p>
       </div>

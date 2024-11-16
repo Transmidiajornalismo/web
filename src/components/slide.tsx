@@ -4,15 +4,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-
-interface PostModel {
-  id: number;
-  date: string;
-  title: string;
-  category: string;
-  author: string;
-  imageURL: string;
-}
+import { PostModel } from '@/models/post.model';
 
 interface ISlideProps {
   posts: PostModel[];
@@ -63,12 +55,14 @@ export const Slide = ({ posts }: ISlideProps) => {
             const nextIndex = (index + 1) % posts.length;
 
             return (
-              <Link
-                href={`/post/${post.id}`}
+              <div
                 key={post.id}
                 className='w-full flex-shrink-0 flex lg:justify-center space-x-1 p-2'
               >
-                <div className='w-3/4 bg-gray-200 rounded-lg px-2 pb-4'>
+                <Link
+                  href={`/post/${post.id}`}
+                  className='w-3/4 bg-gray-200 rounded-lg px-2 pb-4'
+                >
                   <div className='relative mt-2 w-full h-[400px] rounded-xl flex justify-center items-center'>
                     <span className='absolute top-2 left-2 bg-yellow-300 text-black mt-2 px-2 py-1 rounded text-sm'>
                       {post.category}
@@ -77,7 +71,7 @@ export const Slide = ({ posts }: ISlideProps) => {
                       className='p-1 object-cover rounded-xl w-full h-full'
                       src={post.imageURL}
                       alt='Imagem'
-                      width={432}
+                      width={256}
                       height={0}
                     />
                   </div>
@@ -87,7 +81,7 @@ export const Slide = ({ posts }: ISlideProps) => {
                   <p className='text-sm text-gray-600'>
                     Por {post.author} | {post.date}
                   </p>
-                </div>
+                </Link>
                 <div className='w-1/4 lg:w-[240px] flex flex-col justify-center items-center bg-gray-100 rounded-lg'>
                   <div className='mt-1 w-full h-full rounded-lg'>
                     <Image
@@ -100,7 +94,7 @@ export const Slide = ({ posts }: ISlideProps) => {
                     />
                   </div>
                 </div>
-              </Link>
+              </div>
             );
           })}
         </div>
