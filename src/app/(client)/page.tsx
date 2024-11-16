@@ -35,7 +35,7 @@ export default function Component() {
       <div className='flex items-center justify-center min-w-full px-8'>
         <Link href='/post/12'>
           <Image
-            src='http://34.18.51.177/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-15-at-17.50.17.jpeg'
+            src='http://34.18.51.177/wp-content/uploads/2024/11/Ilustracao_ComEspaco_ComRuido_E_Texto_720px.png'
             width={1024}
             height={0}
             alt='Manifesto image'
