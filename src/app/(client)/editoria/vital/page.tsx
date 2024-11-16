@@ -3,8 +3,8 @@ import { EditoriasLayout } from '@/components/interface/editorias';
 
 const cardItems: any = [];
 
-export default function Acue() {
-  const { title, description, color, textColor } = EDITORIAS.ACUE;
+export default function Ubuntu() {
+  const { title, description, color, textColor } = EDITORIAS.VITAL;
 
   return (
     <EditoriasLayout
