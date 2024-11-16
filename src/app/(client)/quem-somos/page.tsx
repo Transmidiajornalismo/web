@@ -1,6 +1,9 @@
+'use client';
+
 import Image from 'next/image';
 import quem from '@/assets/info/quem-somos.svg';
 import { PROFILES } from '@/constants/profiles';
+import { useEffect, useState } from 'react';
 
 interface ProfileData {
   name: string;
@@ -33,6 +36,14 @@ const ProfileCard = ({ profile }: { profile: ProfileData }) => {
 };
 
 export default function About() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, [isMounted]);
+
+  if (!isMounted) return null;
+
   return (
     <main className='flex-grow p-4'>
       <div className='max-w-4xl mx-auto'>
@@ -77,7 +88,7 @@ export default function About() {
               <Image
                 src={quem}
                 alt='Decorative frame'
-                layout='fill'
+                fill
                 objectFit='contain'
                 className='pointer-events-none'
               />
