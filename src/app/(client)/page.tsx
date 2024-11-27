@@ -1,12 +1,13 @@
 'use client';
 
-import ex from '../../../public/images/ex.jpg';
 import { Card } from '@/components/interface/card';
 import { Slide } from '@/components/slide';
 import { PostModel } from '@/models/post.model';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+
+export const dynamic = 'force-dynamic';
 
 export default function Component() {
   const [isMounted, setIsMounted] = useState(false);
