@@ -1,8 +1,5 @@
-'use client';
-
 import Image from 'next/image';
 import parse from 'html-react-parser';
-import { useState, useEffect } from 'react';
 
 interface IPostProps {
   params: {
@@ -22,26 +19,13 @@ interface PostModel {
 
 export const dynamic = 'force-dynamic';
 
-export default function Post({ params }: IPostProps) {
+export default async function Post({ params }: IPostProps) {
   const { slug } = params;
-  const [isMounted, setIsMounted] = useState(false);
-  const [post, setPost] = useState<null | PostModel>(null);
-
-  useEffect(() => {
-    const getPost = async () => {
-      const response = await fetch(`/api/posts/${slug}`);
-      const data = await response.json();
-
-      setPost(data.post);
-      setIsMounted(true);
-    };
-
-    getPost();
-  }, [isMounted]);
-
-  if (!isMounted) {
-    return <div>Loading...</div>;
-  }
+  const response = await fetch(
+    `https://transmidiajornalismo.com.br/api/posts/${slug}`,
+  );
+  const data = await response.json();
+  const post: PostModel = data.post;
 
   return (
     <main className='flex-grow p-4'>

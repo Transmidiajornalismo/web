@@ -1,35 +1,16 @@
-'use client';
-
 import { Card } from '@/components/interface/card';
 import { Slide } from '@/components/slide';
 import { PostModel } from '@/models/post.model';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
 
 export const dynamic = 'force-dynamic';
 
-export default function Component() {
-  const [isMounted, setIsMounted] = useState(false);
-  const [slidePosts, setSlidePosts] = useState<PostModel[]>([]);
-  const [cardPosts, setCardPosts] = useState<PostModel[]>([]);
-
-  useEffect(() => {
-    const getPost = async () => {
-      const response = await fetch(`/api/posts`);
-      const data = await response.json();
-
-      const slide = data.slice(0, 3);
-      const card = data.slice(3);
-      setSlidePosts(slide);
-      setCardPosts(card);
-      setIsMounted(true);
-    };
-
-    getPost();
-  }, [isMounted]);
-
-  if (!isMounted) <div>Loading...</div>;
+export default async function Component() {
+  const response = await fetch(`https://transmidiajornalismo.com.br/api/posts`);
+  const posts: PostModel[] = await response.json();
+  const slidePosts = posts.slice(0, 3);
+  const cardPosts = posts.slice(3);
 
   return (
     <main className='flex-grow text-gray-500 p-4'>
