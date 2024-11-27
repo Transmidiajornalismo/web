@@ -20,6 +20,8 @@ interface PostModel {
   category: string;
 }
 
+export const dynamic = 'force-dynamic';
+
 export default function Post({ params }: IPostProps) {
   const { slug } = params;
   const [isMounted, setIsMounted] = useState(false);
