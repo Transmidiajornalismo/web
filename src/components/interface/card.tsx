@@ -16,7 +16,7 @@ export const Card = ({ post, children }: ICardProps) => {
       <div className='p-4'>
         <div className='relative flex bg-gray-200 rounded-xl mb-4'>
           <span className='absolute top-2 left-2 bg-yellow-300 text-black px-2 py-1 rounded text-xs font-semibold'>
-            Editoria
+            {post.category}
           </span>
           <Image
             className='object-cover w-full h-[360px] rounded-xl'
