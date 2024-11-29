@@ -8,7 +8,7 @@ const formatDate = (dateString: string) => {
   return `${day}.${month}.${year}`;
 };
 
-export async function GET() {
+export async function GET(_req: Request) {
   try {
     const response = await fetch(
       `http://34.18.51.177/?rest_route=/wp/v2/posts`,
