@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { PostModel } from '@/models/post.model';
+import parse from 'html-react-parser';
 
 interface ISlideProps {
   posts: PostModel[];
@@ -78,7 +79,7 @@ export const Slide = ({ posts }: ISlideProps) => {
                     />
                   </div>
                   <h3 className='text-xl font-bold mt-2 text-start'>
-                    {post.title}
+                    {parse(post?.title)}
                   </h3>
                   <p className='text-sm text-gray-600'>
                     Por {post.author} | {post.date}

@@ -27,7 +27,6 @@ export const Card = ({ post, children }: ICardProps) => {
           />
         </div>
         <h3 className='text-xl font-bold text-[#1C1C14]'>{post.title}</h3>
-        {/* <h4 className='text-lg mb-2 text-[#47483B]'>{subtitle}</h4> */}
         <p className='text-sm text-[#47483B]'>
           Por {post.author} | {post.date}
         </p>
