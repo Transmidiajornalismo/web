@@ -191,7 +191,7 @@ export const Navbar = () => {
                 </li>
                 <Separator className='bg-black' />
                 <li>
-                  <a href='#' className='hover:underline'>
+                  <a href='/colunas' className='hover:underline'>
                     Colunas
                   </a>
                 </li>

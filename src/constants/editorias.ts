@@ -15,7 +15,7 @@ export const EDITORIAS: {
     textColor: 'text-[#1C1C14]',
   },
   VITAL: {
-    id: '7',
+    id: '8',
     title: 'vital',
     description: 'Saúde, cuidado e bem-estar',
     color: 'bg-[#3C665A]',
@@ -33,6 +33,13 @@ export const EDITORIAS: {
     title: 'esquinas',
     description: 'Educação, Cultura e Lazer',
     color: 'bg-[#CFB2F5]',
+    textColor: 'text-[#1C1C14]',
+  },
+  COLUNAS: {
+    id: '7',
+    title: 'colunas',
+    description: 'Opinião e análise',
+    color: 'bg-[#F2F2F2]',
     textColor: 'text-[#1C1C14]',
   },
 };
